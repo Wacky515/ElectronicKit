@@ -31,5 +31,5 @@ result_echo $? ${PROCESS}
 # wget https://raw.githubusercontent.com/neuralassembly/raspi/master/webiopi.service
 # result_echo $? "download systemd"
 sudo mv ../webiopi.service /etc/systemd/system/
-result_echo $? "set auto start up"
+result_echo $? "install patch"
 
