@@ -12,10 +12,10 @@ readonly VER="0.7.1"
 ym_echo ">> ${PROCESS^}"
 # wget http://sourceforge.net/projects/webiopi/files/ \
 #     WebIOPi-$VER.tar.gz/download
-wget http://sourceforge.net/projects/webiopi/files/ \
-    WebIOPi-$VER.tar.gz
+wget "http://sourceforge.net/projects/webiopi/files/ \
+    WebIOPi-$VER.tar.gz"
 result_echo $? "download WebIOPi"
-tar xvzf WebIOPi-$VER.tar.gz
+tar xvzf "WebIOPi-$VER.tar.gz"
 result_echo $? "unzip WebIOPi"
 cd WebIOPi-$VER
 sudo ./setup.sh
