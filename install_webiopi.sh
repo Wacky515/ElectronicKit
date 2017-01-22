@@ -18,10 +18,10 @@ tar xvzf WebIOPi-${VER}.tar.gz
 result_echo $? "unzip WebIOPi"
 
 cd WebIOPi-${VER}
-result_echo $? "download patch"
 
 wget https://raw.githubusercontent.com/doublebind/raspi/master/ \
     webiopi-pi2bplus.patch
+result_echo $? "download patch"
 patch -p1 -i webiopi-pi2bplus.patch
 result_echo $? "download patch"
 
