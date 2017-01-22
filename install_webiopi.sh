@@ -26,4 +26,6 @@ patch -p1 -i webiopi-pi2bplus.patch
 result_echo $? "install patch"
 
 sudo ./setup.sh
+wget https://raw.githubusercontent.com/neuralassembly/raspi/master/webiopi.service
+sudo mv webiopi.service /etc/systemd/system/
 result_echo $? ${PROCESS}

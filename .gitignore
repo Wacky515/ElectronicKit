@@ -9,6 +9,7 @@ memo.txt
 *.modifying
 /.vim/tmp/*
 /.vim/dein/*
+/WebIOPi*
 
 # 無視しない者共
 !/.vim/tmp/README.md
