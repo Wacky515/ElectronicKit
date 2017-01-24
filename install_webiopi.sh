@@ -6,7 +6,7 @@ source ~/dotfiles/function/result_echo.sh
 # 実行したファイルのディレクトリに "cd"
 cd $(dirname $0)
 
-readonly PROCESS="install WebIOPi"
+readonly PROCESS="init WebIOPi"
 readonly VER="0.7.1"
 
 ym_echo ">> ${PROCESS^}"
@@ -26,9 +26,16 @@ patch -p1 -i webiopi-pi2bplus.patch
 result_echo $? "install patch"
 
 sudo ./setup.sh
-result_echo $? ${PROCESS}
+result_echo $? "install WebIOPi"
 
 # wget https://raw.githubusercontent.com/neuralassembly/raspi/master/webiopi.service
 # result_echo $? "download systemd"
-sudo cp -vb ./webiopi.service /etc/systemd/system/
-result_echo $? "set auto start up"
+# sudo cp -vb ./webiopi.service /etc/systemd/system/
+sudo cp -vb webiopi.service /etc/systemd/system/ && \
+sudo cp -vb config /etc/webiopi/config
+result_echo $? "copy setting file"
+
+sudo service webiopi start
+result_echo $? ${PROCESS}
+
+ps ax | grep webiopi
